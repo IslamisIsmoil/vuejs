@@ -31,6 +31,28 @@
         <p v-cloak > {{ message }} </p>
         <button v-on:click="reverseMessage">Reverse Message</button>
     </div>
+    <!-- v-model -->
+    <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+
+    <div id="app-7">
+        <ol>
+            <!-- Create an instance of the todo-item component -->
+            <todo-item
+                v-for      = "item in groceryList"
+                v-bind:todo= "item"
+                v-bind:key = "item.id"
+            ></todo-item>
+        </ol>
+    </div>
+    <!-- !The Vue Instance -->
+    <!-- !Data and Methods -->
+    <div id="app-8">
+        <p>{{ foo }}</p>
+        <button v-on:click="foo = 'baz'">Change it</button>
+    </div>
     <!-- production version, optimized for size and speed -->
     <script src="js/vue-script.js"></script>
     <script src="js/script.js"></script>
