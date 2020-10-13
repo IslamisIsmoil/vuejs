@@ -64,3 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 [v-cloak] {
   display: none;
 }
+
+div, p, span {
+  color: #304455;
+}
