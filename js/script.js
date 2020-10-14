@@ -148,3 +148,35 @@ var vm = new Vue({
         }
     }
 });
+
+// Multi check box + array
+new Vue({
+    el: '#app-m',
+    data: {
+      checkedNames: []
+    }
+});
+// select
+new Vue({
+    el: '...',
+    data: {
+      selected: ''
+    }
+});
+
+new Vue({
+    el: '...',
+    data: {
+      selected: 'A',
+      options: [
+        { text: 'One', value: 'A' },
+        { text: 'Two', value: 'B' },
+        { text: 'Three', value: 'C' }
+      ]
+    }
+});
+// By default, v-model syncs the input with the data after each input event (with the exception of IME composition, as stated above).
+// You can add the lazy modifier to instead sync after change events:
+
+// If you want user input to be automatically typecast as a Number, you can add the number modifier to your v-model managed inputs:
+/* <input v-model.trim="msg"> */

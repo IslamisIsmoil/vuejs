@@ -81,6 +81,56 @@
         <p>Original message: "{{ message }}"</p>
         <p>Computed reversed message: "{{ reversedMessage() }}"</p>
     </div>
+
+    <!-- Alt + C -->
+    <input v-on:keyup.alt.67="clear">
+
+    <!-- Ctrl + Click -->
+    <div v-on:click.ctrl="doSomething">Do something</div>
+    <!-- The .exact modifier allows control of the exact 
+    combination of system modifiers needed to trigger an event. -->
+    
+    Multiline text
+    <div id="app-m">
+    <span>Multiline message is:</span>
+    <p style="white-space: pre-line;">{{ message }}</p>
+    <br>
+    <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    Checkbox
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+    </div>
+    <!-- Multiple checkboxes, bound to the same Array: -->
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <br>
+    <span>Checked names: {{ checkedNames }}</span>
+    Radio
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <br>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <br>
+    <span>Picked: {{ picked }}</span>
+    Single select
+    <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+    <span>Selected: {{ selected }}</span>
+    <select v-model="selected">
+        <option v-for="option in options" v-bind:value="option.value">
+          {{ option.text }}
+        </option>
+      </select>
+    <span>Selected: {{ selected }}</span>
     <!-- production version, optimized for size and speed -->
     <script src="js/vue-script.js"></script>
     <script src="js/script.js"></script>
