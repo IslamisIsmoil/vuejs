@@ -51,7 +51,35 @@
     <!-- !Data and Methods -->
     <div id="app-8">
         <p>{{ foo }}</p>
-        <button v-on:click="foo = 'baz'">Change it</button>
+        <button v-on:click="foo = 'Changed'">Change it</button>
+    </div>
+
+
+    <!-- full syntax -->
+    <a v-bind:href="url"> ... </a>
+
+    <!-- shorthand -->
+    <a :href="url"> ... </a>
+
+    <!-- shorthand with dynamic argument (2.6.0+) -->
+    <a :[key]="url"> ... </a>
+
+    <!-- full syntax -->
+    <a v-on:click="doSomething"> ... </a>
+
+    <!-- shorthand -->
+    <a @click="doSomething"> ... </a>
+
+    <!-- shorthand with dynamic argument (2.6.0+) -->
+    <a @[event]="doSomething"> ... </a>
+    
+    <!-- Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in some special way. 
+    For example, the .prevent modifier tells the 
+    v-on directive to call event.preventDefault() on the triggered event: -->
+    <form v-on:submit.prevent="onSubmit"> ... </form>
+    <div id="example">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage() }}"</p>
     </div>
     <!-- production version, optimized for size and speed -->
     <script src="js/vue-script.js"></script>

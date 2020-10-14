@@ -105,7 +105,7 @@ var obj = {
     foo: "bar"
 };
 
-Object.freeze(obj);
+// Object.freeze(obj);
 
 new Vue ({
     el: "#app-8",
@@ -116,16 +116,35 @@ new Vue ({
 // These are prefixed with $ to differentiate them from user-defined properties. 
 // For example:
 
-var data = { a: 1 };
-var vm = new Vue({
-    el: "#example",
-    data: data
-});
+// var data = { a: 1 };
+// var vm = new Vue({
+//     el: "#example",
+//     data: data
+// });
 
-vm.$data === data // => true
-vm.$el === document.getElementById( 'example' ) // => true
+// vm.$data === data // => true
+// vm.$el === document.getElementById( 'example' ) // => true
 
 // $watch is an instance method
-vm.$watch( 'a', function( newValue, oldValue ) {
-    // This callback will be called when 'vm.a' changes
-} );
+// vm.$watch( 'a', function( newValue, oldValue ) {
+//     // This callback will be called when 'vm.a' changes
+// } );
+
+var vm = new Vue({
+    el: '#example',
+    data: {
+      message: 'Hello'
+    },
+    // computed: {
+      // a computed getter
+    //   reversedMessage: function () {    // now we create new function in Vue
+        // `this` points to the vm instance
+        // return this.message.split('').reverse().join('')
+    //   }
+    // },
+    methods: {
+        reversedMessage: function() {
+            return this.message.split('').reverse().join('')
+        }
+    }
+});
